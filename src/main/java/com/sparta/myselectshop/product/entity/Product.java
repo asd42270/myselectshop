@@ -1,10 +1,7 @@
 package com.sparta.myselectshop.product.entity;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 @Entity
 @Table(name = "products")
@@ -12,7 +9,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Builder
 @AllArgsConstructor
-public class Product {
+public class Product extends TimeStamped {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -31,6 +28,7 @@ public class Product {
     private Integer lPrice;
 
     @Column(nullable = false)
+    @Setter
     private Integer myPrice;
 
 }
