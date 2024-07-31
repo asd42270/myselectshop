@@ -1,8 +1,12 @@
 package com.sparta.myselectshop.domain.product.entity;
 
+import com.sparta.myselectshop.domain.folder.entity.ProductFolder;
 import com.sparta.myselectshop.domain.user.entity.User;
 import jakarta.persistence.*;
 import lombok.*;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "products")
@@ -35,5 +39,8 @@ public class Product extends TimeStamped {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id", nullable = false)
     private User user;
+
+    @OneToMany(mappedBy = "product")
+    private List<ProductFolder> productFolderList = new ArrayList<>();
 
 }

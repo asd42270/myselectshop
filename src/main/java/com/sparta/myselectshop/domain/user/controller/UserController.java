@@ -1,6 +1,7 @@
 package com.sparta.myselectshop.domain.user.controller;
 
 import com.sparta.myselectshop.common.security.UserDetailsImpl;
+import com.sparta.myselectshop.domain.folder.service.FolderService;
 import com.sparta.myselectshop.domain.user.dto.SignupRequestDto;
 import com.sparta.myselectshop.domain.user.dto.UserInfoDto;
 import com.sparta.myselectshop.domain.user.entity.UserRoleEnum;
@@ -10,6 +11,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.FieldError;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -26,6 +28,7 @@ import java.util.List;
 public class UserController {
 
     private final UserService userService;
+    private final FolderService folderService;
 
     @GetMapping("/user/login-page")
     public String loginPage() {
@@ -61,5 +64,13 @@ public class UserController {
         boolean isAdmin = (role == UserRoleEnum.ADMIN);
 
         return new UserInfoDto(username, isAdmin);
+    }
+
+    @GetMapping("/user-folder")
+    public String getUserInfo(Model model, @AuthenticationPrincipal UserDetailsImpl userDetails) {
+
+        model.addAttribute("folders", folderService.getFolders(userDetails.getUser()));
+
+        return "index :: #fragment";
     }
 }

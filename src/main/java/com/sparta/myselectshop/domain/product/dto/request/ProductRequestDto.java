@@ -4,8 +4,7 @@ public record ProductRequestDto(
         String title,
         String image,
         String link,
-        Integer lPrice,
-        Integer myPrice
+        Integer lprice
 
 ) {
 }
