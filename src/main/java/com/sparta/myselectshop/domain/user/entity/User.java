@@ -1,4 +1,4 @@
-package com.sparta.myselectshop.domain.user;
+package com.sparta.myselectshop.domain.user.entity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -10,7 +10,6 @@ import lombok.NoArgsConstructor;
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "users")
 @Builder
 public class User {
 
