@@ -1,4 +1,4 @@
-package com.sparta.myselectshop.product.entity;
+package com.sparta.myselectshop.domain.product.entity;
 
 import jakarta.persistence.*;
 import lombok.*;

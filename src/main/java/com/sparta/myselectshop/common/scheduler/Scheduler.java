@@ -1,10 +1,10 @@
-package com.sparta.myselectshop.scheduler;
+package com.sparta.myselectshop.common.scheduler;
 
-import com.sparta.myselectshop.naver.dto.ItemDto;
-import com.sparta.myselectshop.naver.service.NaverApiService;
-import com.sparta.myselectshop.product.entity.Product;
-import com.sparta.myselectshop.product.repository.ProductRepository;
-import com.sparta.myselectshop.product.service.ProductService;
+import com.sparta.myselectshop.domain.naver.dto.ItemDto;
+import com.sparta.myselectshop.domain.naver.service.NaverApiService;
+import com.sparta.myselectshop.domain.product.entity.Product;
+import com.sparta.myselectshop.domain.product.repository.ProductRepository;
+import com.sparta.myselectshop.domain.product.service.ProductService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.scheduling.annotation.Scheduled;

@@ -1,6 +1,6 @@
-package com.sparta.myselectshop.product.repository;
+package com.sparta.myselectshop.domain.product.repository;
 
-import com.sparta.myselectshop.product.entity.Product;
+import com.sparta.myselectshop.domain.product.entity.Product;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface ProductRepository extends JpaRepository<Product, Long> {

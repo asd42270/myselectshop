@@ -1,7 +1,6 @@
-package com.sparta.myselectshop.naver.service;
+package com.sparta.myselectshop.domain.naver.service;
 
-import com.sparta.myselectshop.naver.dto.ItemDto;
-import lombok.RequiredArgsConstructor;
+import com.sparta.myselectshop.domain.naver.dto.ItemDto;
 import lombok.extern.slf4j.Slf4j;
 import org.json.JSONArray;
 import org.json.JSONException;

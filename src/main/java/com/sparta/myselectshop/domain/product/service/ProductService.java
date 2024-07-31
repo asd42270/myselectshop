@@ -1,11 +1,11 @@
-package com.sparta.myselectshop.product.service;
+package com.sparta.myselectshop.domain.product.service;
 
-import com.sparta.myselectshop.naver.dto.ItemDto;
-import com.sparta.myselectshop.product.dto.request.ProductMypriceRequestDto;
-import com.sparta.myselectshop.product.dto.request.ProductRequestDto;
-import com.sparta.myselectshop.product.dto.response.ProductResponseDto;
-import com.sparta.myselectshop.product.entity.Product;
-import com.sparta.myselectshop.product.repository.ProductRepository;
+import com.sparta.myselectshop.domain.product.dto.request.ProductMypriceRequestDto;
+import com.sparta.myselectshop.domain.product.entity.Product;
+import com.sparta.myselectshop.domain.product.repository.ProductRepository;
+import com.sparta.myselectshop.domain.naver.dto.ItemDto;
+import com.sparta.myselectshop.domain.product.dto.request.ProductRequestDto;
+import com.sparta.myselectshop.domain.product.dto.response.ProductResponseDto;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;

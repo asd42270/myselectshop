@@ -1,9 +1,9 @@
-package com.sparta.myselectshop.product.controller;
+package com.sparta.myselectshop.domain.product.controller;
 
-import com.sparta.myselectshop.product.dto.request.ProductMypriceRequestDto;
-import com.sparta.myselectshop.product.dto.request.ProductRequestDto;
-import com.sparta.myselectshop.product.dto.response.ProductResponseDto;
-import com.sparta.myselectshop.product.service.ProductService;
+import com.sparta.myselectshop.domain.product.dto.request.ProductMypriceRequestDto;
+import com.sparta.myselectshop.domain.product.service.ProductService;
+import com.sparta.myselectshop.domain.product.dto.request.ProductRequestDto;
+import com.sparta.myselectshop.domain.product.dto.response.ProductResponseDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 

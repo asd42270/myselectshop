@@ -1,4 +1,4 @@
-package com.sparta.myselectshop.product.dto.response;
+package com.sparta.myselectshop.domain.product.dto.response;
 
 import lombok.Builder;
 
