@@ -1,5 +1,6 @@
 package com.sparta.myselectshop.domain.product.entity;
 
+import com.sparta.myselectshop.domain.user.entity.User;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -30,5 +31,9 @@ public class Product extends TimeStamped {
     @Column(nullable = false)
     @Setter
     private Integer myPrice;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "user_id", nullable = false)
+    private User user;
 
 }

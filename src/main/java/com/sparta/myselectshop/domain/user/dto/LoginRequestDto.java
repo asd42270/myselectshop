@@ -1,10 +1,12 @@
 package com.sparta.myselectshop.domain.user.dto;
 
 import lombok.Builder;
+import lombok.Getter;
+import lombok.Setter;
 
-@Builder
-public record LoginRequestDto(
-        String username,
-        String password
-) {
+@Setter
+@Getter
+public class LoginRequestDto {
+    private String username;
+    private String password;
 }

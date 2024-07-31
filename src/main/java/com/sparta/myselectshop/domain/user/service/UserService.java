@@ -5,9 +5,10 @@ import com.sparta.myselectshop.domain.user.entity.User;
 import com.sparta.myselectshop.domain.user.entity.UserRoleEnum;
 import com.sparta.myselectshop.domain.user.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
-import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+
+import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
@@ -23,15 +24,18 @@ public class UserService {
         String username = requestDto.getUsername();
         String password = passwordEncoder.encode(requestDto.getPassword());
 
-        User user = userRepository.findByUsername(username).orElseThrow(
-                ()-> new IllegalArgumentException("이름이 중복된 사용자가 있습니다.")
-        );
+        // 회원 중복 확인
+        Optional<User> checkUsername = userRepository.findByUsername(username);
+        if (checkUsername.isPresent()) {
+            throw new IllegalArgumentException("중복된 사용자가 존재합니다.");
+        }
 
         // email 중복확인
         String email = requestDto.getEmail();
-        User userByEmail = userRepository.findByEmail(email).orElseThrow(
-                ()-> new IllegalArgumentException("이메일이 중복된 사용자가 있습니다.")
-        );
+        Optional<User> checkEmail = userRepository.findByEmail(email);
+        if (checkEmail.isPresent()) {
+            throw new IllegalArgumentException("중복된 Email 입니다.");
+        }
 
         // 사용자 ROLE 확인
         UserRoleEnum role = UserRoleEnum.USER;
@@ -51,4 +55,5 @@ public class UserService {
 
         userRepository.save(userToSave);
     }
+
 }
